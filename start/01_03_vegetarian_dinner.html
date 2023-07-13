@@ -34,6 +34,15 @@
       }
     ]
     // Write your code here
+    let ulMenu = document.getElementById("menu");
+
+    menu.forEach(menuItem => {
+      if(menuItem.isVegetarian) {
+        let liMenuItem = document.createElement("li");
+        liMenuItem.innerHTML = menuItem.name;
+        ulMenu.append(liMenuItem)
+      }
+    });
 
   </script>
 </body>
