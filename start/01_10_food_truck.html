@@ -16,7 +16,21 @@
 
   <script>
     // Write your code here
+    let vendor1 = ["pizza", "pasta"];
+    let vendor2 = ["pizza", "calzones"];
+    let vendor3 = ["lobster"];
+    let vendor4 = ["calzones"];
+    let vendorList = [vendor1, vendor2, vendor3, vendor4];
+    let vendorListFlat = vendorList.flat(1);
 
+    let masterMenuSet = new Set(vendorListFlat);
+
+    let ulMenu = document.getElementById("combined-menu");
+    masterMenuSet.forEach(menuItem => {
+      let liMenuItem = document.createElement("li");
+      liMenuItem.textContent = menuItem;
+      ulMenu.append(liMenuItem)
+    });
   </script>
 </body>
 
