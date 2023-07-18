@@ -16,7 +16,20 @@
 
   <script>
     // Write your code here
-    
+    let clockDiv = document.getElementById("clock");
+
+    const updateTime = () => {
+      const currentDate = new Date();
+      let dateObj = {
+        hour: currentDate.getHours().toString().padStart(2, '0'),
+        minute: currentDate.getMinutes().toString().padStart(2, '0'),
+        second: currentDate.getSeconds().toString().padStart(2, '0')
+      }
+      let currentTime = `${dateObj.hour}:${dateObj.minute}:${dateObj.second}`;
+      clockDiv.textContent = currentTime;
+    }
+
+    setInterval(updateTime, 1000);
   </script>
 </body>
 
