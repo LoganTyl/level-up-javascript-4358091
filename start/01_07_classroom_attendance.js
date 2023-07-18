@@ -1,7 +1,9 @@
 // Write your code here
 getStudents = (classroom) => {
-  let hasTeachingAssistant = classroom.hasTeachingAssistant;
-  let classList = classroom.classList;
+  // let hasTeachingAssistant = classroom.hasTeachingAssistant;
+  // let classList = classroom.classList;
+
+  let {hasTeachingAssistant, classList} = classroom;
 
   let [teacher, ...classListWithoutTeacher] = classList
 
