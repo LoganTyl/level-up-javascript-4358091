@@ -18,20 +18,35 @@
 
   <script>
     // Write your code here
-    function startChangingBackground(evt) {
-      console.log(evt)
-      let clickedColor = evt.target.id;
-      function changeColor() {
-        document.body.style.backgroundColor = `${clickedColor}`
+    // function startChangingBackground(evt) {
+    //   console.log(evt)
+    //   let clickedColor = evt.target.id;
+    //   function changeColor() {
+    //     document.body.style.backgroundColor = `${clickedColor}`
+    //   }
+    //   return changeColor;
+    // }
+
+    // let buttons = document.querySelectorAll("button");
+    // for (const button of buttons) {
+    //   console.log("in loop")
+    //   button.addEventListener('click', startChangingBackground(evt));
+    // }
+
+    function changeColor(color) {
+      return function () {
+        document.body.style.background = color;
       }
-      return changeColor;
     }
 
-    let buttons = document.querySelectorAll("button");
-    for (const button of buttons) {
-      console.log("in loop")
-      button.addEventListener('click', startChangingBackground(evt));
-    }
+    const bgColorBlue = changeColor("#0f62f3");
+    const bgColorPink = changeColor("#ff7eb6");
+    const bgColorGreen = changeColor("#42be65");
+
+
+    document.querySelector('#blue').addEventListener('click', bgColorBlue);
+    document.querySelector('#pink').addEventListener('click', bgColorPink);
+    document.querySelector('#green').addEventListener('click', bgColorGreen);
   </script>
 </body>
 
