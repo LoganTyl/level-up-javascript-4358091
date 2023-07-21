@@ -16,7 +16,28 @@
 
   <script>
     // Write your code here
+    let nextStopBtn = document.getElementById("next-stop");
 
+    function* getNextStop(arStops) {
+      let index = 0;
+      while(true) {
+        if(index >= arStops.length) {
+          nextStopBtn.disabled = true;
+          yield "We made it!";
+        }
+        else {
+          yield arStops[index];
+          index++;
+        }
+      }
+    }
+
+    let stopGenerator = getNextStop(["Poughkeepsie", "Newburgh", "Peekskill", "Yonkers", "Bronx", "Grand Central"]);
+
+    nextStopBtn.addEventListener("click", () => {
+      console.log(stopGenerator.next().value)
+    }
+    );
   </script>
 </body>
 
